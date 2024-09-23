@@ -2,6 +2,9 @@ let diameter = 20;
 
 let circlefill = 255;
 
+let squarex = 100;
+let squarey = 10;
+
 
 function setup() {
   createCanvas(400, 400);
@@ -42,7 +45,7 @@ function draw() {
     circle(100,150,20);
   }
 
-  fill(circlefill);
+  //fill(circlefill);
   circle(300,100,diameterSlider.val);
 
   text(diameterSlider.label, 200,345);
@@ -53,5 +56,11 @@ function draw() {
   rotate(radians(rotateSlider.val));
   text("graphic design is my passion",0,0);
   pop();
+
+  createJoystick("joystick", 90, 200, 100, 100, -1, 1, 1, -1);
+  //squarex = squarex + createJoystick.valX;
+  //velX = createJoystick.valX;
+  //print(velX);
+  square(squarex, squarey, 10);
 
 }
