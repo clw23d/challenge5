@@ -11,11 +11,18 @@ function setup() {
 
   gui = createGui();
 
+//  toggle.setStyle({
+//      fillLabelOn: color(255,0,0)
+//  });
+
   fillCheckbox = createCheckbox("fill",310,250,20,20);
 
   diameterSlider = createSlider("diameter",200,300,100,30,10,150)
   // x, y, length, height, min, max
   diameterSlider.val = 150;
+  diameterSlider.setStyle({
+    fillBg: color(255,255,0)
+  })
 
   rotateSlider = createSlider("rotate text",200,250,100,30,0,360);
   rotateSlider.val = 0;
