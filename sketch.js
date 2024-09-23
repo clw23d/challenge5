@@ -1,5 +1,7 @@
 let diameter = 20;
 
+let circlefill = 255;
+
 
 function setup() {
   createCanvas(400, 400);
@@ -8,6 +10,8 @@ function setup() {
   strokeWeight(5);
 
   gui = createGui();
+
+  fillCheckbox = createCheckbox("fill",310,250,20,20);
 
   diameterSlider = createSlider("diameter",200,300,100,30,10,150)
   // x, y, length, height, min, max
@@ -21,7 +25,17 @@ function draw() {
   background(125);
   drawGui();
 
-  fill(255);
+ if (fillCheckbox.val) {
+   let circlefill = 0;
+   fill(circlefill);
+   circle(100,150,20);
+ } else {
+    let circlefill = 255
+    fill(circlefill);
+    circle(100,150,20);
+  }
+
+  fill(circlefill);
   circle(300,100,diameterSlider.val);
 
   text(diameterSlider.label, 200,345);
